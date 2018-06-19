@@ -1,0 +1,81 @@
+html, body{
+    height:100%;
+  }
+  
+  body{
+    background-image: url(../images/earth.jpg);
+    text-align: center;
+
+  
+  }
+  
+  #wrapper{
+    margin:2.5% auto;
+    
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width:960px;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+  #subwrapper{
+    position: relative;
+  }
+
+  #quiz-area{  background-image: url(../images/moonrock.jpg);
+    background-size: 25%;
+
+  }
+
+  button{
+    display:block;
+    width:50%;
+    height:20%;
+    margin: 0 auto;
+    border:none;
+    cursor: pointer;
+    font-size: 42px;;
+  }
+  
+  img{
+    height:25%;
+    width:25%;
+    border:10px solid black;
+  }
+  
+  h1{
+    font-family: 'Aclonica', sans-serif;
+    font-size: 6.5em;
+    font-weight: bold;
+    color:black;
+    padding-top: 2.5%;
+    background-image: url(../images/spaceships.jpg);
+  }
+  
+  h2{
+    font-size: 35px;
+   
+    background-image: url(../images/moon2.jpg);
+   
+    color: white;
+  }
+  
+  h3{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  
+  #start{
+    margin-top: 10%;
+    border:5px solid white;
+    background: black;
+    color: white;
+  }
+  
+  
+  
+  button:hover {
+    border:2px solid blue;
+    background: pink;
+  }
