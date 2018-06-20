@@ -52,7 +52,7 @@ let questions = [
   }, 
   {
    
-    question: "Which is the only other Country to land a rover on the Moon?",
+    question: "Which is the only other country beside the USA to land a rover on the Moon?",
     answers: ["Russia", "England", "Germany", "China"],
     correctAnswer: "China",
     image:"assets/images/china.jpg"
@@ -62,6 +62,13 @@ let questions = [
     question: "When was the last time the Moon was explored since 1972 by a rover",
     answers: [1988, 2006, 1999, 2013],
     correctAnswer: 2013,
+    image:"assets/images/moon2.jpg"
+  }, 
+  {
+   
+    question: "What is the name of the new Intergalactic Military Department President Trump recently signed into policy",
+    answers: ["Space Force", "S.H.I.E.L.D", "Gaurdian's of the Galaxy", "Galactic Force"],
+    correctAnswer: "Space Force",
     image:"assets/images/moon2.jpg"
   }, 
 
