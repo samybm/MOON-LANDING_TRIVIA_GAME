@@ -2,7 +2,11 @@
 
 
 let panel = $('#quiz-area');
-let countStartNumber = 30;
+let countStartNumber = 20;
+let audioElement = document.createElement("audio");
+  audioElement.setAttribute("src", "assets/audio/LilWayne-LaLaLa.mp3");
+
+const audio = new Audio("assets/audio/LilWayne-LaLaLa.mp3");
 
 
 
@@ -17,8 +21,10 @@ $(document).on('click', '.answer-button', function(j) {
 
 
 $(document).on('click', '#start', function(j) {
+    audio.play();
     $('#subwrapper').prepend('<h2>Time Remaining: <span id="counter-number">30</span> Seconds</h2>');
     game.loadQuestion();
+    
 });
 
 
@@ -69,7 +75,7 @@ let questions = [
     question: "What is the name of the new Intergalactic Military Department President Trump recently signed into policy",
     answers: ["Space Force", "S.H.I.E.L.D", "Gaurdian's of the Galaxy", "Galactic Force"],
     correctAnswer: "Space Force",
-    image:"assets/images/moon2.jpg"
+    image:"assets/images/moonlanding.jpg"
   }, 
 
 ];
@@ -115,9 +121,9 @@ let game = {
         panel.append(' <img src="' + questions[this.currentQuestion].image + '" />');
 
         if (game.currentQuestion === questions.length - 1){
-            setTimeout(game.results, 3 * 1000);
+            setTimeout(game.results, 2 * 1000);
         } else {
-            setTimeout(game.nextQuestion, 3 * 1000);
+            setTimeout(game.nextQuestion, 1.5 * 1000);
 
         }
     },
@@ -125,15 +131,18 @@ let game = {
         clearInterval(timer);
 
         panel.html('<h2>All done, here is how you did</h2>');
+       
+
         $('#counter-number').html(game.counter);
-        panel.append('<h3> Correct Answers: ' + game.correct + '<h3>');
-        panel.append('<h3>Iccorrect Answers: ' + game.incorrect + '</h3>');
+        panel.append('<h3>Correct Answers: ' + game.correct + '<h3>');
+        panel.append('<h3>Incorrect Answers: ' + game.incorrect + '</h3>');
         panel.append('<h3>Unanswered: ' + (questions.length - (game.incorrect + game.correct)) + '</h3>');
         panel.append('<br><button id="start-over">Start Over?</button>');
      },
 
      clicked: function(j) {
          clearInterval(timer);
+        
 
          if ($(j.target).data("name") === questions[this.currentQuestion].correctAnswer){
            this.answeredCorrectly();  
@@ -146,25 +155,26 @@ let game = {
          game.incorrect++;
          clearInterval(timer);
          panel.html('<h2>Nope!</h2>');
-         panel.append('<h3>The Correct Answer was: ' + questions[game.currentQuestion].correctAnwser + '</h3>');
+         panel.append('<h3>The Correct Answer was: ' + questions[game.currentQuestion].correctAnswer + '</h3>');
          panel.append('<img src="' + questions[game.currentQuestion].image + '" />');
     
          if (game.currentQuestion === questions.length - 1){
-             setTimeout(game.results, 3 * 1000);
+             setTimeout(game.results, 2 * 1000);
          } else {
-             setTimeout(game.nextQuestion, 3 * 1000)
+             setTimeout(game.nextQuestion, 1.5 * 1000)
          }
      },
      answeredCorrectly: function(){
         clearInterval(timer);
         game.correct++;
+        audio.play();
         panel.html('<h2>Correct!</h2>');
         panel.append('<img src="' + questions[game.currentQuestion].image + '" />');
     
         if (game.currentQuestion === questions.length - 1){
-          setTimeout(game.results, 3 * 1000);
+          setTimeout(game.results, 2 * 1000);
         } else {
-          setTimeout(game.nextQuestion, 3 * 1000);
+          setTimeout(game.nextQuestion, 1.5 * 1000);
         }
       },
      reset: function(){
@@ -173,9 +183,14 @@ let game = {
          this.correct = 0;
          this.incorrect = 0;
          this.loadQuestion();
-     }
+     },
 
+   
+
+   
+    
+  
 };
-
+ 
 
 

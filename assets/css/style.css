@@ -1,9 +1,10 @@
 html, body{
     height:100%;
+    width:100%;
   }
   
   body{
-    background-image: url(../images/earth.jpg);
+    background-image: url(../images/moon6.jpg);
     text-align: center;
 
   
@@ -16,14 +17,16 @@ html, body{
     width:960px;
     height: 100%;
     box-sizing: border-box;
+    border:10px black;
   }
   
   #subwrapper{
     position: relative;
   }
 
-  #quiz-area{  background-image: url(../images/moonrock.jpg);
-    background-size: 25%;
+  #quiz-area{  background-image: url(../images/moon3.jpg);
+    background-size: vw;
+    background-repeat: no-repeat;
 
   }
 
@@ -34,43 +37,48 @@ html, body{
     margin: 0 auto;
     border:none;
     cursor: pointer;
-    font-size: 42px;;
+    font-size: 5vw;
   }
   
   img{
-    height:25%;
-    width:25%;
+    height:15vw;
+    width:15vw;
     border:10px solid black;
   }
   
   h1{
     font-family: 'Aclonica', sans-serif;
-    font-size: 6.5em;
+    font-size: 5vw;
     font-weight: bold;
-    color:black;
-    text-shadow: 5px 5px white;
+    color:rgb(228, 9, 9);
+    text-shadow: 5px 5px black;
+    /* create border */
+    border:10px white;
     
-    background-image: url(../images/spaceships.jpg);
+    background-image: url(../images/moon5.jpg);
   }
   
   h2{
-    font-size: 35px;
+    font-size: 5vw;
    
-    background-image: url(../images/moon2.jpg);
-   
-    color: white;
+    background-color: rgb(149, 155, 152);
+    color: url(../images/moon2.jpg);
   }
   
   h3{
-    font-size: 25px;
+    font-size: 7vw;
+    color:rgb(13, 9, 228);
+    text-shadow: 7vw black;
+    font-weight: bold;
+    border:10px rgb(15, 14, 14);
    
   }
   
   #start{
     
     border:5px solid white;
-    background: black;
-    color: white;
+    background: rgb(110, 103, 103);
+    color: rgb(0, 0, 0);
   }
   
   
